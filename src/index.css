@@ -20,13 +20,21 @@ code {
 }
 
 .map-user {
-  background-color: rgb(156, 216, 236);
+  background-color: rgb(234, 241, 243);
   padding: 1rem;
   margin: 1rem;
-  width: 300px;
+  width: 80vw;
+  height: 70vh;
   border: 3px solid black;
   border-radius: 0.375rem;
   text-align: center;
+  display: flex;
+}
+
+.map-user div{
+  border: 1px solid rgb(6, 5, 5);
+  width: 25%;
+  height: 100%;
 }
 
 .paginationBttns {

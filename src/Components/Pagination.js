@@ -11,16 +11,10 @@ function Pagination() {
     const usersPerPage = 10;
     const pageVisited = pageNumber * usersPerPage;
 
+    // { console.log(users) }
+
     const displayUsers = users.slice(pageVisited, pageVisited + 10)
-        .map((user) => {
-            return (
-                <div className='map-user'>
-                    <h3>{user.firstName}</h3>
-                    <h3>{user.lastName}</h3>
-                    <h3>{user.email}</h3>
-                </div>
-            )
-        })
+
 
     const pageCount = Math.ceil(users.length / usersPerPage);
 
@@ -30,9 +24,56 @@ function Pagination() {
 
     return (
         <div className='userData'>
+
             <h2>Pagination</h2>
+
             {/* {console.log(displayUsers)} */}
-            {displayUsers}
+
+            <div className='map-user'>
+
+                <div className='serial-number'>
+
+                    <h3>S.No.</h3>
+
+                    {displayUsers.map((user) => (
+                        <p>{user.id}</p>
+                    ))}
+
+                </div>
+
+                <div className='serial-number'>
+
+                    <h3>First Name</h3>
+
+                    {displayUsers.map((user) => (
+                        <p>{user.firstName}</p>
+                    ))}
+
+                </div>
+
+                <div className='serial-number'>
+
+                    <h3>Last Name</h3>
+
+                    {displayUsers.map((user) => (
+                        <p>{user.lastName}</p>
+                    ))}
+
+                </div>
+
+                <div className='serial-number'>
+
+                    <h3>Email</h3>
+
+                    {displayUsers.map((user) => (
+                        <p>{user.email}</p>
+                    ))}
+
+                </div>
+
+            </div>
+
+
             <ReactPaginate
                 previousLabel={"Previous"}
                 nextLabel={"Next"}
@@ -44,7 +85,7 @@ function Pagination() {
                 disabledClassName={"paginationDisabled"}
                 activeClassName={"paginationActive"}
             />
-        </div>
+        </div >
     )
 }
 
